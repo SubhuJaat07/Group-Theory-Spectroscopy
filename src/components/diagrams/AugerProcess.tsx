@@ -9,22 +9,22 @@ export default function AugerProcess() {
   const steps = [
     {
       title: 'Step 1: Photoionization',
-      desc: 'High energy photon (X-ray) aata hai aur K-shell se electron ko eject kar deta hai. K shell mein hole banta hai.',
+      desc: 'A high-energy X-ray photon ejects an electron from the K-shell. A vacancy (hole) is created in the K-shell.',
       highlight: 'k_eject',
     },
     {
-      title: 'Step 2: Electron Transition (L→K)',
-      desc: 'L-shell ka electron K-shell ki vacancy fill karne ke liye aata hai. Is process mein energy release hoti hai.',
+      title: 'Step 2: Electron Transition (L to K)',
+      desc: 'An electron from the L-shell fills the K-shell vacancy. This transition releases energy.',
       highlight: 'l_transition',
     },
     {
       title: 'Step 3: Auger Electron Emission',
-      desc: 'Released energy ko dusra L-shell electron absorb karke bahar nikal jaata hai — ye hi Auger electron hai (KLL process)!',
+      desc: 'The released energy is absorbed by a second L-shell electron, which is ejected — this is the Auger electron (KLL process).',
       highlight: 'auger',
     },
     {
       title: 'Step 4: Final State',
-      desc: 'Ab molecule ke paas 2 holes hain (K aur L mein). Ye doubly ionized state hai. Auger electron ki kinetic energy measure hoti hai.',
+      desc: 'The molecule now has two holes (in the K and L shells). This is a doubly ionized state. The kinetic energy of the Auger electron is measured.',
       highlight: 'final',
     },
   ];
@@ -104,7 +104,7 @@ export default function AugerProcess() {
           {step === 0 && (
             <motion.g animate={{ x: [0, 0], opacity: [1, 0.5, 1] }} transition={{ duration: 1, repeat: Infinity }}>
               <line x1="80" y1="100" x2="140" y2="195" stroke="#fbbf24" strokeWidth="2" />
-              <text x="60" y="95" fill="#fbbf24" fontSize="10" fontWeight="bold">hν (X-ray)</text>
+              <text x="60" y="95" fill="#fbbf24" fontSize="10" fontWeight="bold">h nu (X-ray)</text>
               <polygon points="140,195 133,188 137,197" fill="#fbbf24" />
             </motion.g>
           )}
@@ -113,7 +113,7 @@ export default function AugerProcess() {
           {step >= 1 && (
             <motion.g animate={{ x: [0, 40], y: [0, -30], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}>
               <circle cx="120" cy="185" r="7" fill="#60a5fa" />
-              <text x="125" y="180" fill="#60a5fa" fontSize="8">e⁻</text>
+              <text x="125" y="180" fill="#60a5fa" fontSize="8">e-</text>
             </motion.g>
           )}
 
@@ -121,7 +121,7 @@ export default function AugerProcess() {
           {step >= 3 && (
             <motion.g animate={{ x: [0, 60], y: [0, -40], opacity: [1, 0] }} transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}>
               <circle cx="200" cy="185" r="7" fill="#f472b6" />
-              <text x="205" y="180" fill="#f472b6" fontSize="8">e⁻ (Auger)</text>
+              <text x="205" y="180" fill="#f472b6" fontSize="8">e- (Auger)</text>
             </motion.g>
           )}
 
@@ -158,10 +158,10 @@ export default function AugerProcess() {
       {/* Energy equation */}
       <div className="bg-amber-500/10 rounded-lg p-3 border border-amber-500/20">
         <p className="text-xs text-amber-300 font-mono text-center">
-          E(Auger) = E(K) - E(L₁) - E(L₂)
+          E(Auger) = E(K) - E(L1) - E(L2)
         </p>
         <p className="text-[10px] text-slate-400 text-center mt-1">
-          Auger electron ki kinetic energy = K binding energy - 2 × L binding energy
+          Kinetic energy of the Auger electron = K binding energy - 2 x L binding energy
         </p>
       </div>
     </div>

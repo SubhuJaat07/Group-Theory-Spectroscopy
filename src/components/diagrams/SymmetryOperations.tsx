@@ -7,22 +7,22 @@ const operations = [
   {
     id: 'E',
     label: 'E (Identity)',
-    desc: 'Kuch nahi hota - molecule apni original position mein rehta hai',
+    desc: 'No change — the molecule remains in its original configuration',
   },
   {
     id: 'C2',
-    label: 'C₂ (Rotation)',
-    desc: '180° rotation ke baad bhi molecule same dikhta hai',
+    label: 'C2 (Rotation)',
+    desc: 'After 180° rotation, the molecule looks identical',
   },
   {
     id: 'sv',
-    label: "σv (Vertical Plane)",
-    desc: 'Ek vertical plane mein reflection - left-right mirror image',
+    label: 'σv (Vertical Plane)',
+    desc: 'Reflection in a vertical plane — left-right mirror image',
   },
   {
     id: 'svp',
     label: "σv' (Vertical Plane)",
-    desc: 'Doosri vertical plane mein reflection - upar-niche mirror image',
+    desc: 'Reflection in a second vertical plane — top-bottom mirror image',
   },
 ];
 
@@ -140,8 +140,8 @@ export default function SymmetryOperations() {
 
       <div className="bg-[#0f172a]/40 rounded-lg p-3 border border-[#334155]/30">
         <p className="text-xs text-slate-400">
-          <span className="text-emerald-400 font-semibold">H₂O Point Group: C₂v</span> — Total 4 symmetry operations: E, C₂, σv(xz), σv&apos;(yz).
-          H₂O ke paas inversion center (i) nahi hota aur improper rotation (Sₙ) bhi nahi hota.
+          <span className="text-emerald-400 font-semibold">H2O Point Group: C2v</span> — Total 4 symmetry operations: E, C2, σv(xz), σv&apos;(yz).
+          H2O has neither an inversion center (i) nor an improper rotation (Sn).
         </p>
       </div>
     </div>

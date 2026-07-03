@@ -5,14 +5,14 @@ import { Zap } from 'lucide-react';
 
 const formulas = [
   {
-    category: 'ESR Key Formulas ⭐',
+    category: 'ESR Key Formulas',
     items: [
-      { formula: 'ΔE = gβₑB₀', desc: 'ESR resonance condition — energy gap between Zeeman levels' },
-      { formula: 'hν = gβₑB₀', desc: 'Resonance frequency — when microwave energy = energy gap' },
-      { formula: 'H = gβₑB·S + S·A·I', desc: 'Spin Hamiltonian — complete ESR Hamiltonian equation' },
-      { formula: 'g = hν / βₑB₀', desc: 'g-value calculation from resonance frequency and field' },
+      { formula: 'delta_E = g beta_e B0', desc: 'ESR resonance condition — energy gap between Zeeman levels' },
+      { formula: 'h nu = g beta_e B0', desc: 'Resonance frequency — when microwave energy equals the energy gap' },
+      { formula: 'H = g beta_e B . S + S . A . I', desc: 'Spin Hamiltonian — complete ESR Hamiltonian equation' },
+      { formula: 'g = h nu / beta_e B0', desc: 'g-value calculation from resonance frequency and field' },
       { formula: 'ge = 2.0023', desc: 'Free electron g-value (exact: 2.0023193)' },
-      { formula: 'ρ = aC / Q', desc: 'McConnell Relationship — spin density from coupling constant' },
+      { formula: 'rho = aC / Q', desc: 'McConnell Relationship — spin density from coupling constant' },
       { formula: 'a = Aiso (Gauss)', desc: 'Hyperfine coupling constant — measures electron-nuclear interaction' },
       { formula: 'Lines = 2nI + 1', desc: 'Number of hyperfine lines (n = equivalent nuclei, I = nuclear spin)' },
     ],
@@ -20,25 +20,25 @@ const formulas = [
   {
     category: 'Spectroscopy Key Formulas',
     items: [
-      { formula: 'ΔE = hν = hc/λ = hcν̃', desc: 'Basic energy-wavelength-frequency relation' },
-      { formula: 'Selection rule: ΔJ = ±1', desc: 'Rotational spectroscopy selection rule (microwave)' },
-      { formula: 'ν̃ = 2B(J+1)', desc: 'Rotational spectrum line positions (rigid rotor)' },
+      { formula: 'delta_E = h nu = hc/lambda = hc nu_tilde', desc: 'Basic energy-wavelength-frequency relation' },
+      { formula: 'Selection rule: delta_J = +/-1', desc: 'Rotational spectroscopy selection rule (microwave)' },
+      { formula: 'nu_tilde = 2B(J+1)', desc: 'Rotational spectrum line positions (rigid rotor)' },
       { formula: 'DOF = 3N', desc: 'Total degrees of freedom for N-atom molecule' },
-      { formula: 'Vib DOF = 3N - 5 (linear)', desc: 'Vibrational degrees for linear molecule' },
-      { formula: 'Vib DOF = 3N - 6 (non-linear)', desc: 'Vibrational degrees for non-linear molecule' },
-      { formula: 'E(Kinetic) = hν - BE', desc: 'Photoelectric effect: Einstein equation' },
-      { formula: 'BE = -εK', desc: 'Koopman\'s theorem: Binding Energy = negative of orbital energy' },
+      { formula: 'Vib DOF = 3N - 5 (linear)', desc: 'Vibrational degrees of freedom for a linear molecule' },
+      { formula: 'Vib DOF = 3N - 6 (non-linear)', desc: 'Vibrational degrees of freedom for a non-linear molecule' },
+      { formula: 'E(Kinetic) = h nu - BE', desc: 'Photoelectric effect: Einstein equation' },
+      { formula: 'BE = -epsilon_K', desc: 'Koopman&apos;s theorem: Binding Energy = negative of orbital energy' },
     ],
   },
   {
-    category: 'Important Definitions ⭐',
+    category: 'Important Definitions',
     items: [
-      { term: 'Franck-Condon Principle', def: 'Electronic transition itni fast hoti hai (~10⁻¹⁵s) ki nuclei ka position change nahi hota — vertical transition hota hai potential energy curves pe.' },
-      { term: 'Mutual Exclusion Principle', def: 'Centrosymmetric molecules (inversion center wale) mein woh modes jo IR active hain woh Raman inactive hote hain aur vice versa.' },
-      { term: 'Kramer\'s Degeneracy', def: 'Jab system mein odd number of unpaired electrons ho (half-integer spin) toh zero magnetic field mein har energy level kam se kam 2-fold degenerate hota hai.' },
-      { term: 'CARS', def: 'Coherent Anti-Stokes Raman Spectroscopy — nonlinear Raman technique jismein 3 laser beams use hote hain (2 pump + 1 Stokes) aur anti-Stokes signal coherent hota hai.' },
-      { term: 'RRS', def: 'Resonance Raman Spectroscopy — jab excitation wavelength electronic absorption band ke paas ho toh Raman scattering ka intensity bahut badh jaata hai (10³-10⁶ times).' },
-      { term: 'PES (Photoelectron Spectroscopy)', def: 'Photon se electron eject karke uski kinetic energy measure karna. Koopman\'s theorem se orbital energies milti hain.' },
+      { term: 'Franck-Condon Principle', def: 'Electronic transitions are so fast (~10^-15 s) that the nuclear positions do not change — the transition is vertical on the potential energy curves.' },
+      { term: 'Mutual Exclusion Principle', def: 'In centrosymmetric molecules (those with an inversion center), vibrational modes that are IR-active are Raman-inactive, and vice versa.' },
+      { term: 'Kramer&apos;s Degeneracy', def: 'When a system has an odd number of unpaired electrons (half-integer spin), every energy level in zero magnetic field is at least 2-fold degenerate.' },
+      { term: 'CARS', def: 'Coherent Anti-Stokes Raman Spectroscopy — a nonlinear Raman technique that uses three laser beams (2 pump + 1 Stokes) and produces a coherent anti-Stokes signal.' },
+      { term: 'RRS', def: 'Resonance Raman Spectroscopy — when the excitation wavelength is near an electronic absorption band, the Raman scattering intensity increases dramatically (10^3 to 10^6 times).' },
+      { term: 'PES (Photoelectron Spectroscopy)', def: 'A technique that ejects electrons using photons and measures their kinetic energy. Orbital energies are obtained using Koopman&apos;s theorem.' },
     ],
   },
 ];
@@ -59,7 +59,7 @@ export default function QuickRevision() {
           </span>
           <div className="flex-1 h-px bg-gradient-to-r from-emerald-500 to-transparent opacity-30" />
         </div>
-        <p className="text-sm text-slate-400">Exam se pehle 30 mins mein yeh sab revise karo 🎯</p>
+        <p className="text-sm text-slate-400">Revise all of this in the 30 minutes before your exam</p>
       </motion.div>
 
       <div className="grid gap-6">

@@ -6,19 +6,19 @@ import { motion } from 'framer-motion';
 export default function FranckCondonDiagram() {
   const [step, setStep] = useState(0);
   const steps = [
-    'Ground state (S₀) ke vibrational levels dekho — energy lowest pe hai',
-    'Absorption! Electron jump karta hai ground state se excited state (S₁) pe — VERTICAL transition (Franck-Condon)',
-    'Kyunki vertical transition hai, nuclear position change nahi hota — isliye v\' = 2 pe maximum probability',
-    'Relaxation — vibrational energy lose hoti hai aur molecule lowest excited level (v\' = 0) pe aata hai',
-    'Emission! Electron wapas ground state pe aata hai — phir se VERTICAL transition',
-    'Stokes shift — Emission wavelength absorption se zyada hoti hai (energy loss ke karan)',
+    'Observe the vibrational levels of the ground state (S0) — energy is at its lowest',
+    'Absorption! The electron jumps from the ground state to the excited state (S1) — a VERTICAL transition (Franck-Condon principle)',
+    'Because the transition is vertical, the nuclear position does not change — hence maximum probability at v&apos;=2',
+    'Relaxation — the molecule loses vibrational energy and reaches the lowest excited level (v&apos;=0)',
+    'Emission! The electron returns to the ground state — again a VERTICAL transition',
+    'Stokes shift — the emission wavelength is longer than the absorption wavelength (due to energy loss)',
   ];
 
   return (
     <div className="space-y-3">
       <div className="bg-[#0f172a]/60 rounded-xl p-3 sm:p-4 border border-[#334155]/50">
         <svg viewBox="0 0 400 280" className="w-full h-auto">
-          {/* Ground State Curve (S₀) */}
+          {/* Ground State Curve (S0) */}
           <motion.path
             d="M 60,220 Q 120,218 180,200 Q 230,180 260,200 Q 290,220 340,220"
             fill="none"
@@ -37,10 +37,10 @@ export default function FranckCondonDiagram() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            S₀
+            S0
           </motion.text>
 
-          {/* Vibrational levels S₀ */}
+          {/* Vibrational levels S0 */}
           {[0, 1, 2].map((v) => (
             <motion.line
               key={`g${v}`}
@@ -58,7 +58,7 @@ export default function FranckCondonDiagram() {
             />
           ))}
 
-          {/* Excited State Curve (S₁) */}
+          {/* Excited State Curve (S1) */}
           <motion.path
             d="M 100,80 Q 150,60 200,55 Q 250,60 300,80 Q 330,110 360,160"
             fill="none"
@@ -77,10 +77,10 @@ export default function FranckCondonDiagram() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
           >
-            S₁
+            S1
           </motion.text>
 
-          {/* Vibrational levels S₁ */}
+          {/* Vibrational levels S1 */}
           {[0, 1, 2, 3].map((v) => (
             <motion.line
               key={`e${v}`}
@@ -108,7 +108,7 @@ export default function FranckCondonDiagram() {
               <line x1="195" y1="215" x2="195" y2="103" stroke="#60a5fa" strokeWidth="2.5" />
               <polygon points="195,98 190,108 200,108" fill="#60a5fa" />
               <text x="200" y="165" fill="#60a5fa" fontSize="11" fontWeight="bold">Absorption</text>
-              <text x="200" y="178" fill="#60a5fa" fontSize="9">(v=0→v&apos;=2)</text>
+              <text x="200" y="178" fill="#60a5fa" fontSize="9">(v=0 to v&apos;=2)</text>
             </motion.g>
           )}
 
@@ -135,7 +135,7 @@ export default function FranckCondonDiagram() {
               <line x1="170" y1="88" x2="155" y2="210" stroke="#f472b6" strokeWidth="2.5" />
               <polygon points="155,215 150,205 160,205" fill="#f472b6" />
               <text x="100" y="155" fill="#f472b6" fontSize="11" fontWeight="bold">Emission</text>
-              <text x="95" y="168" fill="#f472b6" fontSize="9">(v&apos;=0→v=1)</text>
+              <text x="95" y="168" fill="#f472b6" fontSize="9">(v&apos;=0 to v=1)</text>
             </motion.g>
           )}
 

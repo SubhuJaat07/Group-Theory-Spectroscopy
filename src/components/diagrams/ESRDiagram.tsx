@@ -29,7 +29,7 @@ export default function ESRDiagram() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Hyperfine Splitting (I = ½)
+          Hyperfine Splitting (I = 1/2)
         </motion.button>
       </div>
 
@@ -43,13 +43,13 @@ export default function ESRDiagram() {
           {/* External Magnetic Field arrow */}
           <line x1="320" y1="250" x2="320" y2="30" stroke="#f59e0b" strokeWidth="1.5" />
           <polygon points="320,28 317,35 323,35" fill="#f59e0b" />
-          <text x="330" y="15" fill="#f59e0b" fontSize="9" fontWeight="bold">B₀</text>
+          <text x="330" y="15" fill="#f59e0b" fontSize="9" fontWeight="bold">B0</text>
 
           {/* No field - degenerate */}
           {!showZeeman && (
             <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               <line x1="80" y1="150" x2="180" y2="150" stroke="#10b981" strokeWidth="3" />
-              <text x="130" y="145" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">mₛ = ±½</text>
+              <text x="130" y="145" fill="#10b981" fontSize="12" fontWeight="bold" textAnchor="middle">ms = +/-1/2</text>
               <text x="130" y="175" fill="#94a3b8" fontSize="10" textAnchor="middle">B = 0: Degenerate</text>
             </motion.g>
           )}
@@ -73,7 +73,7 @@ export default function ESRDiagram() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                mₛ = -½ (β)
+                ms = -1/2 (beta)
               </motion.text>
 
               {/* Lower level ms = +1/2 */}
@@ -92,7 +92,7 @@ export default function ESRDiagram() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
               >
-                mₛ = +½ (α)
+                ms = +1/2 (alpha)
               </motion.text>
 
               {/* Transition arrow */}
@@ -109,7 +109,7 @@ export default function ESRDiagram() {
                   animate={{ strokeDashoffset: [0, -14] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 />
-                <text x="170" y="155" fill="#fbbf24" fontSize="10" fontWeight="bold">hν = gβₑB₀</text>
+                <text x="170" y="155" fill="#fbbf24" fontSize="10" fontWeight="bold">h nu = g beta_e B0</text>
               </motion.g>
 
               {/* Gap label */}
@@ -117,7 +117,7 @@ export default function ESRDiagram() {
                 x="80" y="155" fill="#94a3b8" fontSize="10" textAnchor="middle"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
               >
-                ΔE
+                delta_E
               </motion.text>
               <motion.line
                 x1="80" y1="105" x2="80" y2="195"
@@ -150,7 +150,7 @@ export default function ESRDiagram() {
                 initial={{ x1: 100, x2: 200 }}
                 animate={{ x1: 90, x2: 170 }}
               />
-              <text x="175" y="84" fill="#60a5fa" fontSize="9">mₛ=-½, m_I=+½</text>
+              <text x="175" y="84" fill="#60a5fa" fontSize="9">ms=-1/2, mI=+1/2</text>
 
               <motion.line
                 x1="90" y1={120} x2="170" y2={120}
@@ -158,7 +158,7 @@ export default function ESRDiagram() {
                 initial={{ x1: 100, x2: 200 }}
                 animate={{ x1: 90, x2: 170 }}
               />
-              <text x="175" y="124" fill="#818cf8" fontSize="9">mₛ=-½, m_I=-½</text>
+              <text x="175" y="124" fill="#818cf8" fontSize="9">ms=-1/2, mI=-1/2</text>
 
               {/* Lower level split into 2 */}
               <motion.line
@@ -167,7 +167,7 @@ export default function ESRDiagram() {
                 initial={{ x1: 100, x2: 200 }}
                 animate={{ x1: 90, x2: 170 }}
               />
-              <text x="175" y="184" fill="#f472b6" fontSize="9">mₛ=+½, m_I=+½</text>
+              <text x="175" y="184" fill="#f472b6" fontSize="9">ms=+1/2, mI=+1/2</text>
 
               <motion.line
                 x1="90" y1={220} x2="170" y2={220}
@@ -175,9 +175,9 @@ export default function ESRDiagram() {
                 initial={{ x1: 100, x2: 200 }}
                 animate={{ x1: 90, x2: 170 }}
               />
-              <text x="175" y="224" fill="#fb7185" fontSize="9">mₛ=+½, m_I=-½</text>
+              <text x="175" y="224" fill="#fb7185" fontSize="9">ms=+1/2, mI=-1/2</text>
 
-              {/* Selection rule transitions (Δm_I = 0) */}
+              {/* Selection rule transitions (delta mI = 0) */}
               <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
                 {/* Transition 1 */}
                 <line x1="115" y1="176" x2="115" y2="84" stroke="#fbbf24" strokeWidth="1.5" strokeDasharray="4 2" />
@@ -192,13 +192,13 @@ export default function ESRDiagram() {
                 x="130" y="152" fill="#fbbf24" fontSize="9" textAnchor="middle" fontWeight="bold"
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}
               >
-                Δmₛ = ±1, Δm_I = 0
+                delta_ms = +/-1, delta_mI = 0
               </motion.text>
 
               {/* Doublet spectrum */}
               <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
                 <rect x="60" y="240" width="180" height="35" rx="6" fill="#1e293b" stroke="#334155" strokeWidth="1" />
-                <text x="150" y="252" fill="#94a3b8" fontSize="8" textAnchor="middle">Hyperfine Doublet (I=½ → 2I+1=2 lines)</text>
+                <text x="150" y="252" fill="#94a3b8" fontSize="8" textAnchor="middle">Hyperfine Doublet (I=1/2, 2I+1=2 lines)</text>
                 <motion.path
                   d="M 75 268 L 110 268 L 120 252 L 128 268 L 155 268 L 163 252 L 172 268 L 210 268"
                   fill="none" stroke="#fbbf24" strokeWidth="1.5"

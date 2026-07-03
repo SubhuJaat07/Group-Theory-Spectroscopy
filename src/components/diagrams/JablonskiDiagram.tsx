@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 const transitions = [
   {
     id: 'absorption',
-    label: 'Absorption (S₀→S₁)',
+    label: 'Absorption (S0 to S1)',
     from: { x: 120, y: 210 },
     to: { x: 120, y: 120 },
     color: '#60a5fa',
-    desc: 'Electron ground state se excited state pe jump karta hai. Photon absorb hota hai (~10⁻¹⁵s mein hota hai).',
+    desc: 'The electron jumps from the ground state to the excited state. A photon is absorbed (occurs in ~10^-15 s).',
   },
   {
     id: 'vr',
@@ -18,39 +18,39 @@ const transitions = [
     from: { x: 120, y: 120 },
     to: { x: 120, y: 135 },
     color: '#a78bfa',
-    desc: 'Non-radiative process — excess vibrational energy ko surrounding molecules ko transfer karta hai (~10⁻¹²s).',
+    desc: 'Non-radiative process — excess vibrational energy is transferred to surrounding molecules (~10^-12 s).',
   },
   {
     id: 'ic',
-    label: 'Internal Conversion (S₁→S₀)',
+    label: 'Internal Conversion (S1 to S0)',
     from: { x: 140, y: 135 },
     to: { x: 140, y: 210 },
     color: '#f472b6',
-    desc: 'Same spin multiplicity ke beech non-radiative transition. S₁ se S₀ pe wapas aata hai bina light emit kiye.',
+    desc: 'Non-radiative transition between states of the same spin multiplicity. The molecule returns from S1 to S0 without emitting light.',
   },
   {
     id: 'isc',
-    label: 'Intersystem Crossing (S₁→T₁)',
+    label: 'Intersystem Crossing (S1 to T1)',
     from: { x: 180, y: 135 },
     to: { x: 220, y: 145 },
     color: '#fb923c',
-    desc: 'Different spin multiplicity ke beech transition. Singlet se Triplet pe jaata hai — spin forbidden lekin SOC se possible.',
+    desc: 'Transition between states of different spin multiplicity. The molecule goes from a singlet to a triplet state — spin-forbidden but made possible by spin-orbit coupling.',
   },
   {
     id: 'fluorescence',
-    label: 'Fluorescence (S₁→S₀)',
+    label: 'Fluorescence (S1 to S0)',
     from: { x: 100, y: 135 },
     to: { x: 100, y: 210 },
     color: '#34d399',
-    desc: 'Radiative decay — same spin multiplicity. Quick process (~10⁻⁹s). Emission wavelength > absorption (Stokes shift).',
+    desc: 'Radiative decay between states of the same spin multiplicity. A fast process (~10^-9 s). The emission wavelength is longer than the absorption wavelength (Stokes shift).',
   },
   {
     id: 'phosphorescence',
-    label: 'Phosphorescence (T₁→S₀)',
+    label: 'Phosphorescence (T1 to S0)',
     from: { x: 220, y: 145 },
     to: { x: 250, y: 210 },
     color: '#fbbf24',
-    desc: 'Spin-forbidden radiative decay. Bahut slow process (~10⁻³s to hours). Isliye glow effect dikhata hai.',
+    desc: 'Spin-forbidden radiative decay. A very slow process (~10^-3 s to hours). This is why phosphorescent materials continue to glow after the excitation source is removed.',
   },
 ];
 
@@ -63,34 +63,34 @@ export default function JablonskiDiagram() {
         <svg viewBox="0 0 340 270" className="w-full h-auto">
           {/* Singlet States */}
           <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-            {/* S₀ */}
+            {/* S0 */}
             <line x1="50" y1="220" x2="170" y2="220" stroke="#10b981" strokeWidth="3" />
-            <text x="35" y="224" fill="#10b981" fontSize="13" fontWeight="bold">S₀</text>
-            {/* S₁ */}
+            <text x="35" y="224" fill="#10b981" fontSize="13" fontWeight="bold">S0</text>
+            {/* S1 */}
             <line x1="70" y1="120" x2="170" y2="120" stroke="#10b981" strokeWidth="3" />
-            <text x="55" y="124" fill="#10b981" fontSize="13" fontWeight="bold">S₁</text>
-            {/* S₂ */}
+            <text x="55" y="124" fill="#10b981" fontSize="13" fontWeight="bold">S1</text>
+            {/* S2 */}
             <line x1="80" y1="60" x2="170" y2="60" stroke="#10b981" strokeWidth="3" />
-            <text x="65" y="64" fill="#10b981" fontSize="13" fontWeight="bold">S₂</text>
+            <text x="65" y="64" fill="#10b981" fontSize="13" fontWeight="bold">S2</text>
 
-            {/* VR arrows in S₂ */}
+            {/* VR arrows in S2 */}
             <motion.line x1="130" y1="60" x2="150" y2="70" stroke="#10b981" strokeWidth="1" strokeDasharray="3 2" opacity="0.4" />
             <motion.line x1="130" y1="70" x2="150" y2="80" stroke="#10b981" strokeWidth="1" strokeDasharray="3 2" opacity="0.4" />
-            {/* VR arrows in S₁ */}
+            {/* VR arrows in S1 */}
             <motion.line x1="130" y1="120" x2="150" y2="130" stroke="#10b981" strokeWidth="1" strokeDasharray="3 2" opacity="0.4" />
             <motion.line x1="130" y1="130" x2="150" y2="140" stroke="#10b981" strokeWidth="1" strokeDasharray="3 2" opacity="0.4" />
           </motion.g>
 
           {/* Triplet States */}
           <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
-            {/* T₁ */}
+            {/* T1 */}
             <line x1="200" y1="140" x2="280" y2="140" stroke="#f59e0b" strokeWidth="3" />
-            <text x="285" y="144" fill="#f59e0b" fontSize="13" fontWeight="bold">T₁</text>
-            {/* T₂ */}
+            <text x="285" y="144" fill="#f59e0b" fontSize="13" fontWeight="bold">T1</text>
+            {/* T2 */}
             <line x1="210" y1="75" x2="280" y2="75" stroke="#f59e0b" strokeWidth="3" />
-            <text x="285" y="79" fill="#f59e0b" fontSize="13" fontWeight="bold">T₂</text>
+            <text x="285" y="79" fill="#f59e0b" fontSize="13" fontWeight="bold">T2</text>
 
-            {/* VR in T₁ */}
+            {/* VR in T1 */}
             <motion.line x1="230" y1="140" x2="260" y2="150" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 2" opacity="0.4" />
           </motion.g>
 

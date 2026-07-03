@@ -66,7 +66,7 @@ export default function ChargeTransferDiagram() {
             transition={{ duration: 2, repeat: Infinity }}
           />
           <text x="280" y="100" fill={mode === 'lmct' ? '#fb923c' : '#94a3b8'} fontSize="14" fontWeight="bold" textAnchor="middle">Ligand</text>
-          <text x="280" y="120" fill={mode === 'lmct' ? '#fb923c' : '#94a3b8'} fontSize="11" textAnchor="middle">p/orbitals</text>
+          <text x="280" y="120" fill={mode === 'lmct' ? '#fb923c' : '#94a3b8'} fontSize="11" textAnchor="middle">p-orbitals</text>
           {mode === 'lmct' && (
             <motion.circle
               cx="260" cy="135" r="5" fill="#fb923c"
@@ -84,14 +84,14 @@ export default function ChargeTransferDiagram() {
                 animate={{ strokeDashoffset: [0, -20] }}
               />
               <polygon points="165,110 173,106 173,114" fill="#fb923c" />
-              <text x="192" y="100" fill="#fb923c" fontSize="10" fontWeight="bold" textAnchor="middle">e⁻</text>
+              <text x="192" y="100" fill="#fb923c" fontSize="10" fontWeight="bold" textAnchor="middle">e-</text>
               <motion.path
                 d="M 175 80 Q 192 55 210 80"
                 fill="none" stroke="#fb923c" strokeWidth="1.5" strokeDasharray="4 3"
                 animate={{ strokeDashoffset: [0, -14] }}
                 transition={{ duration: 1, repeat: Infinity }}
               />
-              <text x="192" y="50" fill="#fb923c" fontSize="9" textAnchor="middle">hν (UV-Vis)</text>
+              <text x="192" y="50" fill="#fb923c" fontSize="9" textAnchor="middle">h nu (UV-Vis)</text>
             </motion.g>
           )}
 
@@ -104,26 +104,26 @@ export default function ChargeTransferDiagram() {
                 animate={{ strokeDashoffset: [0, -20] }}
               />
               <polygon points="215,110 207,106 207,114" fill="#a78bfa" />
-              <text x="188" y="100" fill="#a78bfa" fontSize="10" fontWeight="bold" textAnchor="middle">e⁻</text>
+              <text x="188" y="100" fill="#a78bfa" fontSize="10" fontWeight="bold" textAnchor="middle">e-</text>
               <motion.path
                 d="M 175 80 Q 192 55 210 80"
                 fill="none" stroke="#a78bfa" strokeWidth="1.5" strokeDasharray="4 3"
                 animate={{ strokeDashoffset: [0, -14] }}
                 transition={{ duration: 1, repeat: Infinity }}
               />
-              <text x="192" y="50" fill="#a78bfa" fontSize="9" textAnchor="middle">hν (UV-Vis)</text>
+              <text x="192" y="50" fill="#a78bfa" fontSize="9" textAnchor="middle">h nu (UV-Vis)</text>
             </motion.g>
           )}
 
           {/* Bottom labels */}
           {mode === 'lmct' && (
             <text x="190" y="195" fill="#fb923c" fontSize="11" textAnchor="middle" fontWeight="bold">
-              Ligand → Metal Charge Transfer
+              Ligand to Metal Charge Transfer
             </text>
           )}
           {mode === 'mlct' && (
             <text x="190" y="195" fill="#a78bfa" fontSize="11" textAnchor="middle" fontWeight="bold">
-              Metal → Ligand Charge Transfer
+              Metal to Ligand Charge Transfer
             </text>
           )}
           {!mode && (
@@ -137,7 +137,7 @@ export default function ChargeTransferDiagram() {
             <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               <rect x="90" y="200" width="200" height="18" rx="4" fill="#fb923c" fillOpacity="0.1" />
               <text x="190" y="213" fill="#fb923c" fontSize="9" textAnchor="middle">
-                Example: MnO₄⁻ (purple), CrO₄²⁻ (yellow), TiCl₄
+                Example: MnO4- (purple), CrO42- (yellow), TiCl4
               </text>
             </motion.g>
           )}
@@ -145,7 +145,7 @@ export default function ChargeTransferDiagram() {
             <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
               <rect x="90" y="200" width="200" height="18" rx="4" fill="#a78bfa" fillOpacity="0.1" />
               <text x="190" y="213" fill="#a78bfa" fontSize="9" textAnchor="middle">
-                Example: [Ru(bpy)₃]²⁺ (MLCT), Fe(CN)₆³⁻
+                Example: [Ru(bpy)3]2+ (MLCT), [Fe(CN)6]3-
               </text>
             </motion.g>
           )}

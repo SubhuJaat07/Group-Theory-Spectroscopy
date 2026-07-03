@@ -1,4 +1,6 @@
-'use client';
+import os
+
+content = """'use client';
 
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -163,7 +165,7 @@ const unit2Topics: TopicData[] = [
       <div className="space-y-4">
         <p className="text-slate-300 leading-relaxed">The <b className="text-emerald-400">Franck-Condon Principle</b> states that electronic transitions (~10^-15 s) are much faster than nuclear motion, so nuclei remain frozen during the transition. The transition is <b>vertical</b> on the potential energy diagram.</p>
         <p className="text-slate-300 leading-relaxed">The transition probability from v to v-prime is proportional to the Franck-Condon factor: P(v,v-prime) = |&lt;psi_v | psi_v-prime&gt;|^2. The most intense transition is to the vibrational level with maximum wavefunction overlap at the ground-state equilibrium geometry (often v=0 to v-prime=2 or 3, NOT v-prime=0).</p>
-        <p className="text-slate-300 leading-relaxed"><b className="text-amber-400">Stokes Shift:</b> After absorption (vertical up, often to v-prime=2), vibrational relaxation occurs to v-prime=0. Emission is vertical down to v=1 or v=2. Energy lost to relaxation means emission wavelength &gt; absorption wavelength.</p>
+        <p className="text-slate-300 leading-relaxed"><b className="text-amber-400">Stokes Shift:</b> After absorption (vertical up, often to v-prime=2), vibrational relaxation occurs to v-prime=0. Emission is vertical down to v=1 or v=2. Energy lost to relaxation means emission wavelength > absorption wavelength.</p>
         <FranckCondonDiagram />
         <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-4">
           <p className="text-amber-400 font-bold text-xs uppercase tracking-wider mb-2">Memory Trick</p>
@@ -375,3 +377,9 @@ export default function Page() {
     </main>
   );
 }
+"""
+
+path = '/home/z/my-project/src/app/page.tsx'
+with open(path, 'w', encoding='utf-8') as f:
+    f.write(content)
+print(f"Written {len(content)} bytes, {content.count(chr(10))} lines to {path}")

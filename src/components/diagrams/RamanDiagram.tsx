@@ -121,17 +121,17 @@ export default function RamanDiagram() {
           {activeMode === 'stokes' && (
             <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               <line x1="350" y1="220" x2="350" y2="82" stroke="#f472b6" strokeWidth="1" markerEnd="url(#arrow)" />
-              <text x="358" y="155" fill="#f472b6" fontSize="8">hν₀</text>
+              <text x="358" y="155" fill="#f472b6" fontSize="8">h nu0</text>
               <line x1="360" y1="220" x2="360" y2="185" stroke="#f472b6" strokeWidth="1" />
-              <text x="368" y="207" fill="#f472b6" fontSize="8">hν₀-hν</text>
-              <text x="355" y="175" fill="#f472b6" fontSize="7">← Lower E</text>
+              <text x="368" y="207" fill="#f472b6" fontSize="8">h nu0 - h nu</text>
+              <text x="355" y="175" fill="#f472b6" fontSize="7">Lower E</text>
             </motion.g>
           )}
           {activeMode === 'anti-stokes' && (
             <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
               <line x1="350" y1="185" x2="350" y2="82" stroke="#34d399" strokeWidth="1" />
-              <text x="358" y="140" fill="#34d399" fontSize="8">hν₀+hν</text>
-              <text x="355" y="175" fill="#34d399" fontSize="7">← Higher E</text>
+              <text x="358" y="140" fill="#34d399" fontSize="8">h nu0 + h nu</text>
+              <text x="355" y="175" fill="#34d399" fontSize="7">Higher E</text>
             </motion.g>
           )}
 
@@ -145,9 +145,9 @@ export default function RamanDiagram() {
       {/* Mode buttons */}
       <div className="flex flex-wrap gap-1.5">
         {[
-          { id: 'rayleigh', label: 'Rayleigh', color: 'text-slate-300', desc: 'Same frequency — elastic scattering. Incident photon ki energy same rehti hai. Sabse zyada intense hota hai (~99.9%).' },
-          { id: 'stokes', label: 'Stokes', color: 'text-pink-400', desc: 'Lower frequency — inelastic. Molecule vibrational energy gain karta hai, toh emitted photon ki energy kam hoti hai. ν_scattered < ν_incident.' },
-          { id: 'anti-stokes', label: 'Anti-Stokes', color: 'text-emerald-400', desc: 'Higher frequency — inelastic. Molecule already excited vibrational state mein tha, energy lose karta hai. ν_scattered > ν_incident. Kam intense.' },
+          { id: 'rayleigh', label: 'Rayleigh', color: 'text-slate-300', desc: 'Same frequency — elastic scattering. The incident photon retains its energy. This is the most intense signal (~99.9%).' },
+          { id: 'stokes', label: 'Stokes', color: 'text-pink-400', desc: 'Lower frequency — inelastic scattering. The molecule gains vibrational energy, so the emitted photon has less energy. nu_scattered is less than nu_incident.' },
+          { id: 'anti-stokes', label: 'Anti-Stokes', color: 'text-emerald-400', desc: 'Higher frequency — inelastic scattering. The molecule was already in an excited vibrational state and loses energy. nu_scattered is greater than nu_incident. Less intense.' },
         ].map((mode) => (
           <motion.button
             key={mode.id}
@@ -172,9 +172,9 @@ export default function RamanDiagram() {
           animate={{ opacity: 1, y: 0 }}
           className="text-xs sm:text-sm text-slate-300 bg-[#0f172a]/40 rounded-lg p-3 border border-[#334155]/30"
         >
-          {[{ id: 'rayleigh', desc: 'Same frequency — elastic scattering. Incident photon ki energy same rehti hai. Sabse zyada intense hota hai (~99.9%).' },
-            { id: 'stokes', desc: 'Lower frequency — inelastic. Molecule vibrational energy gain karta hai, toh emitted photon ki energy kam hoti hai. ν_scattered < ν_incident.' },
-            { id: 'anti-stokes', desc: 'Higher frequency — inelastic. Molecule already excited vibrational state mein tha, energy lose karta hai. ν_scattered > ν_incident. Kam intense.' },
+          {[{ id: 'rayleigh', desc: 'Same frequency — elastic scattering. The incident photon retains its energy. This is the most intense signal (~99.9%).' },
+            { id: 'stokes', desc: 'Lower frequency — inelastic scattering. The molecule gains vibrational energy, so the emitted photon has less energy. nu_scattered is less than nu_incident.' },
+            { id: 'anti-stokes', desc: 'Higher frequency — inelastic scattering. The molecule was already in an excited vibrational state and loses energy. nu_scattered is greater than nu_incident. Less intense.' },
           ].find(m => m.id === activeMode)?.desc}
         </motion.p>
       )}

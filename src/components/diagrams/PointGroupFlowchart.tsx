@@ -13,32 +13,32 @@ interface FlowNode {
 }
 
 const nodes: FlowNode[] = [
-  { id: 'linear', question: 'Kya molecule Linear hai?', yes: 'c_inf', no: 'high_sym' },
-  { id: 'c_inf', question: 'Kya σh plane hai?', yes: 'D∞h', no: 'C∞v', pointGroup: 'C∞v' },
-  { id: 'high_sym', question: 'Kya koi Cₙ axis hai jahan n > 2?', yes: 'td_oh', no: 'low_sym' },
-  { id: 'td_oh', question: 'Kya 3+ C₂ axes hain C₄ ke perpendicular?', yes: 'Oh', no: 'Td', pointGroup: 'Td' },
-  { id: 'low_sym', question: 'Kya Cₙ principal axis hai?', yes: 'has_cn', no: 'no_cn' },
-  { id: 'has_cn', question: 'Kya n perpendicular C₂ axes hain?', yes: 'dn_check', no: 'cn_check' },
-  { id: 'dn_check', question: 'Kya σh plane hai?', yes: 'Dnh', no: 'dn_d_check' },
-  { id: 'dn_d_check', question: 'Kya n σd planes hain?', yes: 'Dnd', no: 'Dn', pointGroup: 'Dn' },
-  { id: 'cn_check', question: 'Kya σh plane hai?', yes: 'Cnh', no: 'cn_v_check' },
-  { id: 'cn_v_check', question: 'Kya n σv planes hain?', yes: 'Cnv', no: 'Sn_check' },
-  { id: 'Sn_check', question: 'Kya S₂n improper axis hai?', yes: 'S2n', no: 'Cn', pointGroup: 'Cn' },
-  { id: 'no_cn', question: 'Kya σ plane hai?', yes: 'Cs', no: 'i_check' },
-  { id: 'i_check', question: 'Kya inversion center hai?', yes: 'Ci', no: 'C1', pointGroup: 'Ci' },
+  { id: 'linear', question: 'Is the molecule linear?', yes: 'c_inf', no: 'high_sym' },
+  { id: 'c_inf', question: 'Is there a σh plane?', yes: 'D∞h', no: 'C∞v', pointGroup: 'C∞v' },
+  { id: 'high_sym', question: 'Is there a Cn axis where n &gt; 2?', yes: 'td_oh', no: 'low_sym' },
+  { id: 'td_oh', question: 'Are there 3+ C2 axes perpendicular to C4?', yes: 'Oh', no: 'Td', pointGroup: 'Td' },
+  { id: 'low_sym', question: 'Is there a Cn principal axis?', yes: 'has_cn', no: 'no_cn' },
+  { id: 'has_cn', question: 'Are there n perpendicular C2 axes?', yes: 'dn_check', no: 'cn_check' },
+  { id: 'dn_check', question: 'Is there a σh plane?', yes: 'Dnh', no: 'dn_d_check' },
+  { id: 'dn_d_check', question: 'Are there n σd planes?', yes: 'Dnd', no: 'Dn', pointGroup: 'Dn' },
+  { id: 'cn_check', question: 'Is there a σh plane?', yes: 'Cnh', no: 'cn_v_check' },
+  { id: 'cn_v_check', question: 'Are there n σv planes?', yes: 'Cnv', no: 'Sn_check' },
+  { id: 'Sn_check', question: 'Is there an S2n improper axis?', yes: 'S2n', no: 'Cn', pointGroup: 'Cn' },
+  { id: 'no_cn', question: 'Is there a σ plane?', yes: 'Cs', no: 'i_check' },
+  { id: 'i_check', question: 'Is there an inversion center?', yes: 'Ci', no: 'C1', pointGroup: 'Ci' },
 ];
 
 const pointGroupResults: Record<string, string> = {
-  'D∞h': 'CO₂, H₂, N₂ — Linear, σh + i center',
+  'D∞h': 'CO2, H2, N2 — Linear, σh + i center',
   'C∞v': 'HCN, CO — Linear, no σh',
-  'Oh': 'SF₆, [Fe(CN)₆]⁴⁻ — Octahedral',
-  'Td': 'CH₄, CCl₄ — Tetrahedral',
-  'Dnh': 'C₆H₆ (D₆h), BF₃ (D₃h)',
-  'Dnd': 'Ethane staggered (D₃d)',
-  'Cnh': 'Trans-C₂H₂Cl₂ (C₂h)',
-  'Cnv': 'H₂O (C₂v), NH₃ (C₃v)',
-  'S2n': 'S₄ — Allene type',
-  'Cs': 'CH₂ClF — σ plane only',
+  'Oh': 'SF6, [Fe(CN)6]4- — Octahedral',
+  'Td': 'CH4, CCl4 — Tetrahedral',
+  'Dnh': 'C6H6 (D6h), BF3 (D3h)',
+  'Dnd': 'Ethane staggered (D3d)',
+  'Cnh': 'Trans-C2H2Cl2 (C2h)',
+  'Cnv': 'H2O (C2v), NH3 (C3v)',
+  'S2n': 'S4 — Allene type',
+  'Cs': 'CH2ClF — σ plane only',
   'Ci': 'Anti-1,2-dichloroethane — i center only',
   'C1': 'CHFClBr — No symmetry',
 };
@@ -103,7 +103,7 @@ export default function PointGroupFlowchart() {
                   whileTap={{ scale: 0.95 }}
                   className="px-5 py-2 rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-sm font-medium cursor-pointer hover:bg-emerald-500/30 transition-colors"
                 >
-                  Haan ✓
+                  Yes
                 </motion.button>
                 <motion.button
                   onClick={() => handleAnswer('no')}
@@ -111,7 +111,7 @@ export default function PointGroupFlowchart() {
                   whileTap={{ scale: 0.95 }}
                   className="px-5 py-2 rounded-lg bg-red-500/20 text-red-400 border border-red-500/30 text-sm font-medium cursor-pointer hover:bg-red-500/30 transition-colors"
                 >
-                  Nahi ✗
+                  No
                 </motion.button>
               </div>
             </motion.div>

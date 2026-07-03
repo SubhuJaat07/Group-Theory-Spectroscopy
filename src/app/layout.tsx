@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Group Theory & Spectroscopy | M.Sc. Chemistry Paper IX",
+  title: "Subhu Creation | Group Theory & Spectroscopy",
   description: "Complete exam preparation for M.Sc. Chemistry Paper IX - Group Theory and Spectroscopy. Interactive notes with animations, diagrams, and PYQ bank.",
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/favicon.svg",
   },
 };
 

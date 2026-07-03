@@ -85,7 +85,7 @@ export default function HeroSection() {
           <span className="text-white">Group Theory</span>
           <br />
           <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-            & Spectroscopy
+            &amp; Spectroscopy
           </span>
         </motion.h1>
 
@@ -97,7 +97,7 @@ export default function HeroSection() {
         >
           Complete interactive notes with animated diagrams, 3D visualizations, and
           <span className="text-amber-400 font-semibold"> Previous Year Questions</span> bank
-          — sab kuch ek jagah, exam-ready banne ke liye! 🎯
+          — everything in one place to get exam-ready!
         </motion.p>
 
         <motion.div
