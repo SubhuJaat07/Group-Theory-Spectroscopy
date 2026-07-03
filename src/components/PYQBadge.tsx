@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 interface PYQBadgeProps {
   count: number
-  years?: string[]
+  years?: string | string[]
 }
 
 export default function PYQBadge({ count, years }: PYQBadgeProps) {
@@ -23,7 +23,7 @@ export default function PYQBadge({ count, years }: PYQBadgeProps) {
       </span>
       <span>{label}</span>
       {years && (
-        <span className="opacity-70">({years.join(', ')})</span>
+        <span className="opacity-70">({Array.isArray(years) ? years.join(', ') : years})</span>
       )}
     </motion.span>
   )
